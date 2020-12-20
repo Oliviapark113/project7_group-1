@@ -1,21 +1,22 @@
 
 //For weather input appID for weather 
   var appID = "80b3e8a297999f6bc99d97f895ecd144"
+  var defaultCity = "new york"
   var query_param;
   var currentDay = document.querySelector("#current-date");
   var now = moment().format('LLL');
   var cityVariable = localStorage.getItem("cities") || []
 
-  // lastSavedCity ()
+  lastSavedCity ()
 
-  // function lastSavedCity(){
-  //   if(cityVariable){
-  //         weather ="https://api.openweathermap.org/data/2.5/weather?q=" +cityVariable +"&units=imperial"+"&appid=" + appID;
+  function lastSavedCity(){
+    if(cityVariable){
+          weather ="https://api.openweathermap.org/data/2.5/weather?q=" +cityVariable +"&units=imperial"+"&appid=" + appID;
       
-  //       getWeatherData()
-  //   }
+        getWeatherData()
+    }
 
-  // }
+  }
  
 
 // Indicate Current date and time .. on front page
@@ -27,10 +28,7 @@
 
   $(".search_btn").on("click",function(){
 
-    // localStorage.clear()
-    $(".weather-result").removeClass("hide")
-    $(".select").removeClass("hide")
-   
+    localStorage.clear()
 
     query_param =$(this).prev().val();
 
@@ -49,7 +47,7 @@
 
   }
 
-  // localStorage.setItem('cities', query_param)
+  localStorage.setItem('cities', query_param)
 
   });
 
@@ -85,25 +83,8 @@
     })
   }
 
-  //fun animation effect for logos 
-  var h1Complete = function(){
-    $(this).animate({fontSize:"55px",opacity:"1"},3000)
 
-}
 
-var pComplete = function(){
-  $(this).animate({fontSize:"16px",opacity:"1"},3000)
-
-}
-  $("h1").on("click", function(){
-
-    $(this).animate({fontSize:"100px",opacity:"0.3"},"slow",h1Complete)
-  });
-
-  $("p").on("click", function(){
-
-    $(this).animate({fontSize:"50px",opacity:"0.3"},"slow",pComplete)
-  });
   //variables for media APIs 
 
   var musicVideoURL;
@@ -118,7 +99,7 @@ var pComplete = function(){
   var artistImage = $(".image-artist")  
   var media = $(".media")
   var overlay = $(".overlay")
-  var img;
+
   // randomly pulled data based on selected Number 
 
   function runRandom(num){
@@ -128,56 +109,57 @@ var pComplete = function(){
           artistImage.empty()
           for (var i=0; i<parseNum; i++){
           var randomSong =  flatMasterList[Math.floor(Math.random()*flatMasterList.length)]
-       
-          // console.log(randomSong.trackName) //
-          // console.log(randomSong.artistName) //  
-          // console.log(randomSong.primaryGenreName) //
-          // console.log(randomSong.previewUrl) //music video
-          // console.log(randomSong.artworkUrl100)  //image 
+          console.log(randomSong)// randomly picked objects from master array 
+          console.log(randomSong.trackName) //
+          console.log(randomSong.artistName) //  
+          console.log(randomSong.primaryGenreName) //
+          // console.log(randomSong.trackCensoredName)
+          console.log(randomSong.previewUrl) //music video
+          console.log(randomSong.artworkUrl100)  //image 
 
           // add into our DOM video element ..
-          // var imgBox = $("<div>")
-          img = $("<img>")
+          var imgBox = $("<div>")
+
+          var img = $("<img>")
           img.attr("src", randomSong.artworkUrl100)
-          img.attr("data-song", randomSong.previewUrl)
-          img.attr("data-track", randomSong.trackName)
           img.attr("class", "artist-image")
-          artistImage.append(img)
+          imgBox.append(img)
+
+          var playButton = $("<button>")
+          playButton.text("play")
+          // playButton.css(z-index:)
+          imgBox.append(playButton)
+          artistImage.append(imgBox)
 
         }
         
-        artistImage.on("click", img , playMusicVideo)
+        artistImage.on("click", playButton , function(e){
+          e.stopPropagation()
+          console.log($(this))
+      
+          openMedia(randomSong.previewUrl,randomSong.trackName)
+          
+        })
       }
       
-      function playMusicVideo(e){
-        e.stopPropagation()
-        console.log(e.target)
-        console.log($(this))
-        var myVideo = e.target.getAttribute("data-song")
-        var myTrack = e.target.getAttribute("data-track")
-        openMedia(myVideo,myTrack)
-        
-      }
 
   function openMedia (url,title) {  
     console.log(url)
     media.html(`<video controls autoplay src="${url}" ></video> <p>${title}</p>`)
-     media.removeClass("hide")
-     toggleOverlay ();
-    }
+  media.removeClass("hidden")};
   
 
   function closeMedia(){
     media.html("")
-    toggleOverlay ();
   }
  
   function toggleOverlay (){
     overlay.toggleClass("blur")
+    img.each(function(image){
+      image.toggleClass("blur")
+    })
 
   }
-
-  overlay.on("click", closeMedia)
 
 
   var clearKeyword;    //("Clear")
@@ -193,7 +175,7 @@ var pComplete = function(){
 
     if(userWeather.includes("Clear"))
     { 
-        clearKeyword =["pop","hiphop","country","ska","reggae"];
+        clearKeyword =["pop","hiphop","ska","reggae"];
 
         for(var i =0; i<clearKeyword.length; i++){
         
@@ -205,84 +187,26 @@ var pComplete = function(){
 
           })
 
-          
+          if(userWeather.includes("Clouds")){ 
+        cloudsKeyword =["R&B","lo-fi","country","jazz"];
+
+        for(var i =0; i<cloudsKeyword.length; i++){
+        
+        musicVideoURL = "https://itunes.apple.com/search?term="+cloudsKeyword[i]+"&media=musicVideo&limit=50"
+
+          var response = await $.ajax({
+            url: musicVideoURL,
+            method: "GET"
+
+          })
         // console.log(JSON.parse(response))
         var responseJson = JSON.parse(response)
-        masterList.push(responseJson.results)  
+        masterList.push(responseJson.results)
+        
       
       }
 
   }
-
-  else if(userWeather.includes("Clouds"))
-  { 
-      cloudsKeyword =["R&B","lo-fi","jazz","blues"];
-
-      for(var i =0; i<cloudsKeyword.length; i++){
-      
-      musicVideoURL = "https://itunes.apple.com/search?term="+cloudsKeyword[i]+"&media=musicVideo&limit=50"
-
-        var response = await $.ajax({
-          url: musicVideoURL,
-          method: "GET"
-
-        })
-
-        
-      // console.log(JSON.parse(response))
-      var responseJson = JSON.parse(response)
-      masterList.push(responseJson.results)  
-    
-    }
-
-}
-
-if(userWeather.includes("Snow"))
-{ 
-    snowKeyword =["christmaspop","classical","christmasjazz","blues"];
-
-    for(var i =0; i<snowKeyword.length; i++){
-    
-    musicVideoURL = "https://itunes.apple.com/search?term="+snowKeyword[i]+"&media=musicVideo&limit=50"
-
-      var response = await $.ajax({
-        url: musicVideoURL,
-        method: "GET"
-
-      })
-
-      
-    // console.log(JSON.parse(response))
-    var responseJson = JSON.parse(response)
-    masterList.push(responseJson.results)  
-  
-  }
-
-}
-
-if(userWeather.includes("Rain"))
-{ 
-    rainKeyword =["jazz","R&B","soul","blues"];
-
-    for(var i =0; i<rainKeyword.length; i++){
-    
-    musicVideoURL = "https://itunes.apple.com/search?term="+rainKeyword[i]+"&media=musicVideo&limit=50"
-
-      var response = await $.ajax({
-        url: musicVideoURL,
-        method: "GET"
-
-      })
-
-      
-    // console.log(JSON.parse(response))
-    var responseJson = JSON.parse(response)
-    masterList.push(responseJson.results)  
-  
-  }
-
-}
-
 
   runRandom(numResults);
   })
