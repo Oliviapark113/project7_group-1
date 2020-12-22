@@ -20,10 +20,12 @@ function runRandom(num) {
   var parseNum = parseInt(num)
   var flatMasterList = masterList.flat()
   artistImage.empty()
+
+
   for (var i = 0; i < parseNum; i++) {
     var randomVideo = flatMasterList[Math.floor(Math.random() * flatMasterList.length)]
 
-   
+    console.log(randomVideo)
     img = $("<img>")
     img.attr("src", randomVideo.artworkUrl100)
     img.attr("data-video", randomVideo.previewUrl)
@@ -37,9 +39,10 @@ function runRandom(num) {
   artistImage.on("click", img, playMusicVideo)
 }
 
+
+
 function playMusicVideo(e) {
-// verify data on or off in the parent element 
-// if on the open video if off then close video
+
 e.stopPropagation()
 
   console.log(e.target)
@@ -55,7 +58,7 @@ e.stopPropagation()
 function openMedia(url, title) {
   console.log(url)
   media.html(`<video controls autoplay src="${url}" ></video><p>${title}</p>`)
-  media.append("<button>CLOSE</button>")
+  media.append("<button class='closeBtn'>CLOSE</button>")
   media.removeClass("hide")
   
 }
@@ -75,14 +78,18 @@ function toggleOverlay() {
 media.on("click", closeMedia)
 
 
+
+
+
 var clearKeyword;    //("Clear")
 var cloudsKeyword;  //("Clouds")
 var snowKeyword;   //("Snow")
 var rainKeyword;  //("Rain")
 var windKeyword;  //("Windy")
+var mistKeyword; //("Mist")
 
 musicBtn.on("click", async function () {
-
+ 
   numResults = $("#numRecords").val()
   var userWeather = $("#main_weather").text()
 
@@ -98,7 +105,6 @@ musicBtn.on("click", async function () {
         method: "GET"
 
       })
-
 
       // console.log(JSON.parse(response))
       var responseJson = JSON.parse(response)
@@ -180,9 +186,9 @@ musicBtn.on("click", async function () {
 
 
 movieBtn.on("click", async function () {
-   
+ 
+  
   numResults = $("#numRecords").val()
-
   var userWeather = $("#main_weather").text()
 
   if (userWeather.includes("Clear")) {
