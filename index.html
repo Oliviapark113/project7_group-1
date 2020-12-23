@@ -1,11 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project7</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Style/olivia.css">
+
+  <link rel="stylesheet" href="Style/navBar.css">
+
+  <link rel="stylesheet" href="Style/style.css">
+
 </head>
 <body>
+  <div  class="holy-grail-grid">
+    <div class="holy-grail-header">
+      <nav  class="top-bar topbar-responsive align-center">
+        <div id="navBar" class="top-bar-title">
+          <h1 style="font-family: 'Bree Serif', serif;">RagingMongooses</h1>
+          <p>Wheather or not.. love your music and movies</p>
+        </div>
+        <div id="topbar-responsive" class="topbar-responsive-links">
+          <div class="top-bar-right">
+            <ul class="menu simple vertical medium-horizontal">
+              <!-- <li><a href="#">Home</a></li>
+              <li><a href="#">Music</a></li>
+              <li><a href="#">Movies</a></li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      
+    </div>
+  
+
+
+  <!--weather Finder-->
+  <div class="holy-grail-left weather-container">
+    <h3 style="padding-bottom: 1rem; font-family: 'Bree Serif', serif;">Weather Finder</h3>
+
+    <div class="city-search">
+      <input class="searh_btn" type="text" placeholder="City">
+      <button type="button" style= "color: white; margin-top: 1rem;" class="search_btn">Search for a City</button>
+    </div>
+
+    <!-- <div class="zip-search">
+      <input type="text" placeholder="Zip Code">
+      <button type="button" style= "color: white;" class="search_btn">Search for a Zip Code</button>
+    </div> -->
+
+    <div class="weather-result hide">
+      <h5><span id="current-date"></span></h5>
+      <h5><span id="city"></span><span id="country"></span></h5>
+      <h5><span id="main_weather"></span></h5>
+      <h5><span id="description_weather"></span></h5>
+      <img id="weather_image" src="">
+      <h5><span id="temperature"></span></h5>
+    </div>
+
+    <div class="select hide">
+      <div>Please select a number of options</div>
+      <select class="form-control" id="numRecords">
+          <option value=3>3</option>
+          <option value=6 selected>6</option>
+          <option value=9>9</option>
+      </select>
+      <div class="button-container">
+          <button id="musicBtn">GO TO MUSIC</button>
+          <button id="movieBtn">GO TO MOVIE</button>
+      </div>
+  </div>
+
+  </div>
+  <!--end weather finder-->
+  
+  
     
+    <div class="holy-grail-middle mv-container">
+      <!-- <h3>This is where the music will go</h3> -->
+      <div style="padding-left: 3.5rem;" class="image-artist"></div>
+    </div>
+  
+    <div class="holy-grail-right">
+        <div id="videoSection">
+            <!-- <h3>This is where video can go</h3> -->
+            <div style="padding-left: 3.5rem;" class="video-container"></div>
+            <div class="media"></div>
+        </div>
+        <!-- <div id="videoInfoSection">
+            <h3>This is where the info for the video/song can go</h3>
+            <ul>
+                <li>Artist: </li>
+                <li>Album: </li>
+                <li>Song: </li>
+                <li>Genre: </li>
+            </ul>
+        </div> -->
+    </div>
+
+    
+
+
+  
+    
+  
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="crossorigin="anonymous"></script>
+
+  <script src="Script/utility.js"></script>
+  <script src="Script/media.js"></script>
+
+  
+
 </body>
 </html>
