@@ -10,6 +10,7 @@ var container = $(".mv-container")
 var artistImage = $(".image-artist")
 var media = $(".media")
 var img;
+
 // randomly pulled data based on selected Number 
 function runRandom(num, type) {
   //number value string convert into " number"
@@ -46,7 +47,7 @@ e.stopPropagation()
 function openMedia(url, title) {
   console.log(url)
   media.html(`<video controls autoplay width=700px src="${url}" ></video><p>${title}</p>`)
-  media.append("<button class='closeBtn'>CLOSE</button>")
+  // media.append("<button class='closeBtn'>CLOSE</button>")
   media.removeClass("hide")
 }
 function closeMedia() {
@@ -62,6 +63,7 @@ function toggleWeatherBox(){
   $(".city-search").toggleClass("hide")
   $(".zip-search").toggleClass("hide")
   $(".weather-result").toggleClass("hide")
+
 }
 function toggleSelect(){
   $(".select").toggleClass("selectMove")
@@ -74,6 +76,7 @@ var windKeyword;  //("Windy")
 var mistKeyword; //("Mist")
 musicBtn.on("click", async function () {
   // toggleWeatherBox();
+  removeMiddleColumn()
   toggleSelect();
   numResults = $("#numRecords").val()
   var userWeather = $("#main_weather").text()
@@ -146,6 +149,7 @@ musicBtn.on("click", async function () {
 })
 movieBtn.on("click", async function () {
   numResults = $("#numRecords").val()
+  removeMiddleColumn()
   var userWeather = $("#main_weather").text()
   if (userWeather.includes("Clear")) {
     clearKeyword = ["action", "drama", "romance", "western", "comedy"];
@@ -227,5 +231,20 @@ function formatName (string){
   }
 }
 
-formatName("adsafjakldfkafkaadfaadflkfafkfjalkdjfalkjdfadjlkj")
-formatName("Mike")
+// formatName("adsafjakldfkafkaadfaadflkfafkfjalkdjfalkjdfadjlkj")
+// formatName("Mike")
+
+function middleColumn (){
+  if (artistImage.html() === ""){
+    container.addClass("middleColumn")
+  }
+}
+
+function removeMiddleColumn (){ 
+    container.removeClass("middleColumn")
+  
+}
+
+console.log(artistImage.html() === "")
+
+middleColumn()

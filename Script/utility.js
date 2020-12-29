@@ -57,3 +57,5 @@ $("h1").on("click", function () {
 $("#logoPara").on("click", function () {
   $(this).animate({ fontSize: "50px", opacity: "0.3" }, "slow", pComplete)
 });
+
+

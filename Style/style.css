@@ -4,7 +4,7 @@ body{
   background: linear-gradient(#000a12,#263238);
   color: whitesmoke;
   font-family: 'Big Shoulders Stencil Text', cursive;
-  height: 200vh;
+  /* height: 200vh; */
   font-family: 'Bree Serif', serif;
 }
 
@@ -13,121 +13,15 @@ h5{
 }
 
 
-
-.holy-grail-grid {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 2fr 3fr;
-        grid-template-columns: 1fr 2fr 3fr;
-    -ms-grid-rows: 1fr 24fr 1fr;
-        grid-template-rows: 1fr 24fr 1fr;
-    grid-gap: 20px;
-    height: 100vh;
-  }
-  
-  @media screen and (max-width: 60em) {
-    .holy-grail-grid {
-      -ms-grid-rows: 2fr 1fr 5fr 1fr;
-          grid-template-rows: 2fr 1fr 5fr 1fr;
-    }
-  }
-  
-#holyGrailHeader{
-    text-align: left;
-}
-
 #navBar{
   text-align: center;
+
 }
 
-.holy-grail-header{
-  margin-top: 1rem;
-  padding: 1rem;
-  /* background: #000a12; */
-}  
-
-.holy-grail-left{
-  color: white;
-  padding: 1rem;
-  border: 1px solid #ededed;
-  background: #000a12;
-  margin-left: 12rem;
-  /* margin-right: 3rem; */
+.link{
+  font-size: large;
+  margin: 5px;
 }
-
-.holy-grail-right{
-  color: white;
-  padding: 1rem;
-  border: 1px solid #ededed;
-  background: #000a12;
-  margin-right: 12rem;
-}
-
-.holy-grail-middle{
-  color: white;
-  /* padding: 1rem; */
-  border: 1px solid #ededed;
-  background: #000a12;
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; */
-  /* margin-right: 5rem; */
-}
- 
-
-  .holy-grail-footer {
-    color: white;
-    padding: 1rem;
-    border: 1px solid #ededed;
-    background: #000a12;
-  }
-  
-  .holy-grail-header {
-    -ms-grid-column: 1;
-        grid-column-start: 1;
-    grid-column-end: 4;
-    -ms-grid-row: 1;
-        grid-row-start: 1;
-  }
-  
-  @media screen and (max-width: 60em) {
-    .holy-grail-left {
-      -ms-grid-row: 2;
-          grid-row-start: 2;
-      -ms-grid-column: 1;
-          grid-column-start: 1;
-      grid-column-end: 4;
-    }
-  }
-  
-  @media screen and (max-width: 60em) {
-    .holy-grail-middle {
-      -ms-grid-row: 3;
-          grid-row-start: 3;
-      -ms-grid-column: 1;
-          grid-column-start: 1;
-      grid-column-end: 4;
-    }
-  }
-  
-  @media screen and (max-width: 60em) {
-    .right-nav {
-      -ms-grid-row: 4;
-          grid-row-start: 4;
-      -ms-grid-column: 1;
-          grid-column-start: 1;
-      grid-column-end: 4;
-    }
-  }
-  
-  .holy-grail-footer {
-    -ms-grid-column: 1;
-        grid-column-start: 1;
-    grid-column-end: 4;
-  }
-  
-
- 
 
 #weatherSection{
     margin-left: 20px;
@@ -169,4 +63,24 @@ h5{
   #zipCode{
     margin-bottom:15px;
   }
+
+
+
+#myColumn{
+  float:left;
+  width: 30%;
+  margin: 10px;
+}
+
+@media screen and (max-width: 1066px){
+   #myColumn {
+        width: 100%;        
+    }
+
+    .middleColumn {
+      height: 100%;
+    }
+
+}
+
 
