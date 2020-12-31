@@ -1,0 +1,184 @@
+
+
+.holy-grail-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr 3fr;
+        grid-template-columns: 1fr 2fr 3fr;
+    -ms-grid-rows: 1fr 24fr 1fr;
+        grid-template-rows: 1fr 24fr 1fr;
+    grid-gap: 20px;
+    height: 100vh;
+  }
+
+  
+#holyGrailHeader{
+    text-align: left;
+}
+
+#navBar{
+  text-align: center;
+}
+
+
+.holy-grail-header{
+  margin-top: 1rem;
+  padding: 1rem;
+
+}  
+
+.holy-grail-left{
+  color: white;
+  padding: 1rem;
+  border: 1px solid #ededed;
+  background: #000a12;
+  margin-left: 2rem;
+  /* margin-right: 3rem; */
+}
+
+.holy-grail-right{
+  color: white;
+  padding: 1rem;
+  border: 1px solid #ededed;
+  background: #000a12;
+  margin-right: 2rem;
+}
+
+.holy-grail-middle{
+  color: white;
+  /* padding: 1rem; */
+  border: 1px solid #ededed;
+  background: #000a12;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; */
+  /* margin-right: 5rem; */
+}
+.holy-grail-footer {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+
+  .holy-grail-footer {
+    color: white;
+    padding: 1rem;
+    border: 1px solid #ededed;
+    background: #000a12;
+  }
+
+  .holy-grail-header {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 4;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+  }
+  @media screen and (max-width: 60em) {
+    .holy-grail-grid {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr ;
+      -ms-grid-rows: 1fr 2fr 4fr 1fr;
+          grid-template-rows: 1fr 2fr 4fr 1fr;
+    }
+  
+
+    .holy-grail-left {
+      -ms-grid-row: 2;
+          grid-row-start: 2;
+      -ms-grid-column: 1;
+          grid-column-start: 1;
+      grid-column-end: 4;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .holy-grail-left h3{
+      text-align: center;
+    }
+
+    .weather-container input:focus{
+      color: black;
+      top: 50%;
+      right:50%;
+      transform: scale(1.1) translate(10%, 10%);
+      margin: 10px;
+ 
+  }
+
+    .holy-grail-left .search_btn{
+      display:block;
+    } 
+
+    .holy-grail-left .select_para{
+      text-align:center;
+    } 
+
+    .holy-grail-left .form-control{
+      display:block;
+    } 
+
+    .holy-grail-left .button-container{
+      display: flex;
+      justify-content: center;
+    } 
+
+
+
+
+    .holy-grail-middle {
+      -ms-grid-row: 3;
+          grid-row-start: 3;
+      -ms-grid-column: 1;
+          grid-column-start: 1;
+      grid-column-end: 4;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+ 
+
+   
+    .holy-grail-right {
+      -ms-grid-row: 4;
+          grid-row-start: 4;
+      -ms-grid-column: 1;
+          grid-column-start: 1;
+      grid-column-end: 4;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  
+
+
+    .right-nav {
+      -ms-grid-row: 4;
+          grid-row-start: 4;
+      -ms-grid-column: 1;
+          grid-column-start: 1;
+      grid-column-end: 4;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+  }
+ 
+
+
+
+/* #weatherSection{
+    margin-left: 20px;
+} 
+
+
+
+#weatherBox{
+    width:180px;
+    height:180px;
+    background-color: white;
+    margin-top:15px;
+    height: 300px;
+  } */
+  

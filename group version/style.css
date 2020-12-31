@@ -1,0 +1,102 @@
+/* Nav bar background */
+*{ box-sizing: border-box; }
+
+body{
+  font-family: 'Big Shoulders Stencil Text', cursive;
+  height: 200vh;
+  font-family: 'Bree Serif', serif;
+  background: linear-gradient(#000a12,#263238);
+  color: #ffffff;
+  margin: 0px;
+  padding: 0px; 
+  height: 200vh;
+} 
+h5{
+  font-family: 'Bree Serif', serif;
+}
+.topbar-responsive {
+  background: #000a12;
+  padding: 1rem 1rem;
+  border: solid #ffffff .3px;
+  /* margin-right: 10rem;
+  margin-left: 10rem; */
+  margin: auto;
+}
+
+/* Title color */
+.topbar-responsive .topbar-responsive-logo {
+  color: #ffffff;
+  vertical-align: middle;
+  font-size: xx-large;
+  background:transparent;
+  text-align: center;  
+}
+
+/* this */
+.topbar-responsive .menu {
+  background:transparent;
+}
+
+.topbar-responsive .menu li {
+  margin: auto;
+}
+
+/* Nav bar link text color */
+.topbar-responsive .menu a {
+  color: #ffffff;
+  transition: color 0.15s ease-in;
+}
+
+.topbar-responsive .menu a:hover {
+  color:#2962ff;
+  font-size: x-large;
+  transition: color 0.15s ease-in;
+}
+
+.navbar-toggleBtn{
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  font-size: 24px;
+  color:#ffffff;
+  display: none;
+
+}
+
+.navbar-toggleBtn:hover{
+  color:#2962ff;
+}
+
+@media screen and (max-width: 60em) {
+
+  .topbar-responsive .menu {
+    /* display:flex; */
+    flex-direction:column;
+    align-items: center;
+    padding:0;
+    margin:0;
+    width:100%;
+    display: none;
+   }
+   
+     .topbar-responsive .menu li{
+      margin:5px;
+      padding-left:0;
+     width:100%;
+    
+      }
+   
+      .navbar-toggleBtn{
+       display: block;
+    }
+   
+   
+    .topbar-responsive .menu.active{
+    
+     display: flex;
+   
+   }
+
+  }
+
+
