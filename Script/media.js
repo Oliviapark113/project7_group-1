@@ -69,7 +69,7 @@ var mistKeyword; //("Mist")
 musicBtn.on("click", async function () {
 
   removeMiddleColumn()
-  toggleSelect();
+
   numResults = $("#numRecords").val()
   var userWeather = $("#main_weather").text()
   if (userWeather.includes("Clear")) {
