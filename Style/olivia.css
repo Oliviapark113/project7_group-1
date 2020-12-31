@@ -1,4 +1,5 @@
 
+
 .search_btn{
     color: whitesmoke;
     padding: 8px;
@@ -27,9 +28,10 @@
 .weather-container input:focus{
     color: black;
     top: 300%;
-    right:300%;
-    transform: scale(1.1) translate(30%, 30%);
+    right:500%;
+    transform: scale(1.2) translate(50%, 50%);
     margin: 10px;
+   
 }
 .hide{
     display: none;
@@ -82,11 +84,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
- 
+  
 } 
+
 .video-container{
 width: 100%;
 } 
+
 .artist-image{
     width:180px;
     height:180px;
@@ -116,7 +120,6 @@ width: 100%;
     font-size: 16px;
     padding:10px; 
 }
-
 .blur{
     opacity: 0.3;
     transition: all 2s ease;
@@ -134,5 +137,6 @@ width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 1rem;
-  
+
 }
+

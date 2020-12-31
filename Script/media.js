@@ -10,6 +10,7 @@ var container = $(".mv-container")
 var artistImage = $(".image-artist")
 var media = $(".media")
 var img;
+
 // randomly pulled data based on selected Number 
 function runRandom(num, type) {
   //number value string convert into " number"
@@ -52,20 +53,13 @@ function openMedia(url, title) {
 function closeMedia() {
   media.html("")
   toggleOverlay();
-  // toggleWeatherBox();
+
 }
 function toggleOverlay() {
   $(".artist-image").toggleClass("blur")
 }
 media.on("click", closeMedia)
-function toggleWeatherBox(){
-  $(".city-search").toggleClass("hide")
-  $(".zip-search").toggleClass("hide")
-  $(".weather-result").toggleClass("hide")
-}
-function toggleSelect(){
-  $(".select").toggleClass("selectMove")
-}
+
 var clearKeyword;    //("Clear")
 var cloudsKeyword;  //("Clouds")
 var snowKeyword;   //("Snow")
@@ -73,7 +67,7 @@ var rainKeyword;  //("Rain")
 var windKeyword;  //("Windy")
 var mistKeyword; //("Mist")
 musicBtn.on("click", async function () {
-  // toggleWeatherBox();
+
   removeMiddleColumn()
   toggleSelect();
   numResults = $("#numRecords").val()
@@ -112,7 +106,7 @@ musicBtn.on("click", async function () {
         url: musicVideoURL,
         method: "GET"
       })
-      // console.log(JSON.parse(response))
+
       var responseJson = JSON.parse(response)
       musicMasterList.push(responseJson.results)
     }
@@ -125,7 +119,7 @@ musicBtn.on("click", async function () {
         url: musicVideoURL,
         method: "GET"
       })
-      // console.log(JSON.parse(response))
+
       var responseJson = JSON.parse(response)
       musicMasterList.push(responseJson.results)
     }
@@ -138,16 +132,19 @@ musicBtn.on("click", async function () {
         url: musicVideoURL,
         method: "GET"
       })
-      // console.log(JSON.parse(response))
+  
       var responseJson = JSON.parse(response)
       musicMasterList.push(responseJson.results)
     }
   }
   runRandom(numResults,"music");
 })
+
+
 movieBtn.on("click", async function () {
   numResults = $("#numRecords").val()
   removeMiddleColumn()
+
   var userWeather = $("#main_weather").text()
   if (userWeather.includes("Clear")) {
     clearKeyword = ["action", "drama", "romance", "western", "comedy"];
@@ -216,6 +213,7 @@ movieBtn.on("click", async function () {
   }
   runRandom(numResults, "movie");
 })
+
 function formatName (string){
   var shortStr = string.slice(0,20) + "..."
   if (string.length > 20){
@@ -227,15 +225,19 @@ function formatName (string){
     return string
   }
 }
-// formatName("adsafjakldfkafkaadfaadflkfafkfjalkdjfalkjdfadjlkj")
-// formatName("Mike")
+
+
 function middleColumn (){
   if (artistImage.html() === ""){
     container.addClass("middleColumn")
   }
 }
+
 function removeMiddleColumn (){ 
     container.removeClass("middleColumn")
+  
 }
+
 console.log(artistImage.html() === "")
+
 middleColumn()

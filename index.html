@@ -4,34 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>RagingMongooses</title>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+
   <script src="https://kit.fontawesome.com/09ac4049bb.js" crossorigin="anonymous"></script>
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style2.css">
+
+  <link rel="stylesheet" href="Style/olivia.css">
+
+  <link rel="stylesheet" href="Style/style.css">
+
 </head>
 <body>
+
   <!-- Top container -->
   <div style="height: 200px; margin: 5px; margin-top: 25px" class="grid-container fluid">
     <div style="height: 150px; margin: 5px;" class="grid-x grid-margin-x align-center">
       <div id="navBar" class="cell small-12">
+
         <h1 style="font-family: 'Bree Serif', serif;">RagingMongooses</h1>
+
         <h3>Weather or not.. love your music and movies</h3>
+
+  
+
       </div>
+      
+      
     </div>
   </div>
+
   <!-- Bottom container -->
   <div style="height: 600px; margin: 5px;" class="grid-container fluid">
     <div style="height: 550px; margin: 5px;" class="grid-x grid-margin-x medium-margin-collapse align-center">
+
       <!-- Weather Finder -->
-      <div id="myColumn" style="border:solid; margin-left: 1rem;" class="cell small-4 weather-container">
+      <div id="myColumn" style="border:solid;" class="cell small-4 weather-container">
         <h3 style="padding-left: 2rem; padding-bottom: 1rem; font-family: 'Bree Serif', serif; text-align: center;">Weather Finder</h3>
+
         <div style="padding-left: 2rem;" class="city-search">
-          <input class="city-input" type="text" placeholder="City">
+          <input class="search_btn" type="text" placeholder="City">
           <button type="button" style= "color: white; margin-top: 1rem; display: block;" class="search_btn">Search for a City</button>
         </div>
+
         <div style="padding-left: 2rem;" class="weather-result hide">
           <h5><span id="current-date"></span></h5>
           <h5><span id="city"></span><span id="country"></span></h5>
@@ -40,6 +59,7 @@
           <img id="weather_image" src="">
           <h5><span id="temperature"></span></h5>
         </div>
+
         <div style="padding-left: 2rem;" class="select hide">
           <div style="text-align: center;">Please select a number of options</div>
           <select style="display: block;" class="form-control" id="numRecords">
@@ -52,24 +72,35 @@
               <button id="movieBtn">GO TO MOVIE</button>
           </div>
         </div>
+
       </div>
+
       <!-- Music Results -->
       <div id="myColumn" style="border:solid;" class="cell small-4 mv-container">
         <div style="padding-left: 3.5rem;" class="image-artist"></div>
       </div>
+
       <!-- Video preview -->
       <div id="myColumn" style="border:solid;" class="cell small-4">
         <div id="videoSection" >
-          <div style="padding-left: 3.5rem; margin-right: 1rem;" class="video-container"></div>
+          <div style="padding-left: 3.5rem;" class="video-container"></div>
           <div class="media"></div>
         </div>
+
         <div></div>
+        
       </div>
+
     </div>
   </div>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
   integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="crossorigin="anonymous"></script>
-  <script src="utility.js"></script>
-  <script src="media.js"></script>
+
+  <script src="Script/utility.js"></script>
+  <script src="Script/media.js"></script>
+
+  
+
 </body>
 </html>
