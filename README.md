@@ -7,13 +7,13 @@
 * Using 2 different API to incorprate one APP
 
 #### DESCRIPTION: 
-* User searches weather on user's area, based on weather data of user's area App suggest best music, movie information to users. 
+* User searches weather based off city and is given music and movie suggestions to match the mood of current weather result. 
 
 #### MOTIVATION: 
 * Discover new music and movie to enhance users feeling.
 
 #### User Story: 
-* As a user, I want to recieve current weather with music and/or movie recommended to me based on current weather. 
+* As a user, I want to receive current weather information for the city I search, based off that result, I would like to receive music and movie recommendations that matches the mood for the current weather.
 
 ## TECHNOLOGIES to use:
 #### API 
@@ -65,16 +65,16 @@ Separate music and movie data from one master array
 (resolution- set musicMaterList and movieMasterList as 2 global empty array variables and push music and movie data separately)
 
 ##### Success: 
-Working with teammates and resolve function issues and layout issues and build app together. 
+As a team we were able to overcome issues related to the functionality and layout of the code, to produce a fun and informative app for the user.
 
 #### Original Layout
 ![](./Images/project7%20layout-01.jpg)
 
 #### Actual APP view 
-##### 1.When open pages .. User enter city data input area. 
+##### 1.When user arrives on website, the user can enter a city name in the input area
 ![alt 1st full view](./Images/full%20first%20page%20view.jpg)
 
-##### 2.Then user will recieve the current weather data , select number of data and choose button for music or movie
+##### 2.Then the user will receive the current weather data for said city, and be given an option to select the number of music or movie results they would like to receive to match the mood of the current weather.
 ![alt 2nd weather view](./Images/full%20weather%20view.jpg)
 
 ##### 3.Then recieve recommended data per number of selection. 
@@ -82,7 +82,7 @@ Working with teammates and resolve function issues and layout issues and build a
 
 ##### 4.Then click images to view video.
 ![alt 3rd with image view ](./Images/full%20video%20view.jpg)
-##### once video starts playing image sections gets blur . once finished user click "CLOSE" button to end video.
+##### Once the image is selected, it becomes blurred, and starts playing the video for related song or movie. Once the user is finished, they can click on the "CLOSE" button to end the video.
 
-##### 5.App is Resposive
+##### 5.App is Responsive
 ![alt responsive view](./Images/responsive_full_reduced.jpg)
