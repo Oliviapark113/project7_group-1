@@ -1,5 +1,4 @@
 *{ box-sizing: border-box; }
-
 body{
   margin: 0; 
   padding: 0; 
@@ -8,37 +7,61 @@ body{
   height: 200vh;
   font-family: 'Bree Serif', serif;
 }
-
 h5{
   font-family: 'Bree Serif', serif;
 }
-
-
+#topContainer{
+  height: 150px;
+  margin: 5px;
+  margin-top: 25px;
+}
+#topContainerRow{
+  height: 150px;
+  margin: 5px;
+}
 #navBar{
   text-align: center;
-
 }
-
-
-
-#myColumn{
+h1{
+  font-family: 'Permanent Marker', cursive;
+}
+#bottomContainer{
+  height: 600px;
+  margin: 5px;
+}
+#bottomContainerRow{
+  height: 550px;
+  margin: 5px;
+}
+#firstColumn,
+#secondColumn,
+#thirdColumn{
   float:left;
   width: 30%;
   margin: 10px;
+  border:solid;
 }
-
+#pTagOne{
+  padding: 1rem;
+  font-family: 'Bree Serif', serif; 
+  text-align: center;
+}
+#numberOptions{
+  text-align: center;
+}
+#numRecords{
+  display: block;
+}
 @media screen and (max-width: 1066px){
   body{
     height: 250vh;
   }
-   #myColumn {
+  #firstColumn,
+  #secondColumn,
+  #thirdColumn{
         width: 100%;        
     }
-
     .middleColumn {
       height: 100%;
     }
-
 }
-
-
