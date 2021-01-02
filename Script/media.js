@@ -59,7 +59,6 @@ function closeMedia() {
 function toggleOverlay() {
   $(".artist-image").toggleClass("blur")
 }
-
 media.on("click", closeMedia)
 var clearKeyword;    //("Clear")
 var cloudsKeyword;  //("Clouds")
