@@ -11,7 +11,7 @@ var artistImage = $(".image-artist")
 var media = $("#media")
 var img;
 var mediaSection = $(".mediaSection")
-// randomly pulled data based on selected Number 
+// randomly pulled data based on selected Number
 function runRandom(num, type) {
   //number value string convert into " number"
   var parseNum = parseInt(num)
@@ -73,7 +73,7 @@ musicBtn.on("click", async function () {
   if (userWeather.includes("Clear")) {
     clearKeyword = ["pop", "hiphop", "country", "ska", "reggae"];
     for (var i = 0; i < clearKeyword.length; i++) {
-      musicVideoURL = "https://itunes.apple.com/search?term=" + clearKeyword[i] + "&media=musicVideo&limit=50"
+      musicVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + clearKeyword[i] + "&media=musicVideo&limit=50"
       var response = await $.ajax({
         url: musicVideoURL,
         method: "GET"
@@ -86,7 +86,7 @@ musicBtn.on("click", async function () {
   else if (userWeather.includes("Clouds")) {
     cloudsKeyword = ["R&B", "lo-fi", "jazz", "blues"];
     for (var i = 0; i < cloudsKeyword.length; i++) {
-      musicVideoURL = "https://itunes.apple.com/search?term=" + cloudsKeyword[i] + "&media=musicVideo&limit=50"
+      musicVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + cloudsKeyword[i] + "&media=musicVideo&limit=50"
       var response = await $.ajax({
         url: musicVideoURL,
         method: "GET"
@@ -99,7 +99,7 @@ musicBtn.on("click", async function () {
   if (userWeather.includes("Snow")) {
     snowKeyword = ["christmaspop", "classical", "christmasjazz", "blues"];
     for (var i = 0; i < snowKeyword.length; i++) {
-      musicVideoURL = "https://itunes.apple.com/search?term=" + snowKeyword[i] + "&media=musicVideo&limit=50"
+      musicVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + snowKeyword[i] + "&media=musicVideo&limit=50"
       var response = await $.ajax({
         url: musicVideoURL,
         method: "GET"
@@ -111,7 +111,7 @@ musicBtn.on("click", async function () {
   if (userWeather.includes("Rain")) {
     rainKeyword = ["jazz", "R&B", "soul", "blues"];
     for (var i = 0; i < rainKeyword.length; i++) {
-      musicVideoURL = "https://itunes.apple.com/search?term=" + rainKeyword[i] + "&media=musicVideo&limit=50"
+      musicVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + rainKeyword[i] + "&media=musicVideo&limit=50"
       var response = await $.ajax({
         url: musicVideoURL,
         method: "GET"
@@ -123,7 +123,7 @@ musicBtn.on("click", async function () {
   if (userWeather.includes("Mist")) {
     mistKeyword = ["jazz", "R&B", "soul", "lo-fi"];
     for (var i = 0; i < mistKeyword.length; i++) {
-      musicVideoURL = "https://itunes.apple.com/search?term=" + mistKeyword[i] + "&media=musicVideo&limit=50"
+      musicVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + mistKeyword[i] + "&media=musicVideo&limit=50"
       var response = await $.ajax({
         url: musicVideoURL,
         method: "GET"
@@ -141,7 +141,7 @@ movieBtn.on("click", async function () {
   if (userWeather.includes("Clear")) {
     clearKeyword = ["action", "drama", "romance", "western", "comedy"];
     for (var i = 0; i < clearKeyword.length; i++) {
-      movieVideoURL = "https://itunes.apple.com/search?term=" + clearKeyword[i] + "&media=movie&limit=50"
+      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + clearKeyword[i] + "&media=movie&limit=50"
       var response = await $.ajax({
         url: movieVideoURL,
         method: "GET"
@@ -154,7 +154,7 @@ movieBtn.on("click", async function () {
   else if (userWeather.includes("Clouds")) {
     cloudsKeyword = ["romance", "drama", "classics","scifi"];
     for (var i = 0; i < cloudsKeyword.length; i++) {
-      movieVideoURL = "https://itunes.apple.com/search?term=" + cloudsKeyword[i] + "&media=movie&limit=50"
+      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + cloudsKeyword[i] + "&media=movie&limit=50"
       var response = await $.ajax({
         url: movieVideoURL,
         method: "GET"
@@ -167,7 +167,7 @@ movieBtn.on("click", async function () {
   if (userWeather.includes("Snow")) {
     snowKeyword = ["romance", "comedy", "action", "kids","holiday"];
     for (var i = 0; i < snowKeyword.length; i++) {
-      movieVideoURL = "https://itunes.apple.com/search?term=" + snowKeyword[i] + "&media=movie&limit=50"
+      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + snowKeyword[i] + "&media=movie&limit=50"
       var response = await $.ajax({
         url: movieVideoURL,
         method: "GET"
@@ -180,7 +180,7 @@ movieBtn.on("click", async function () {
   if (userWeather.includes("Rain")) {
     rainKeyword = ["thriller", "documentary", "horror", "independent"];
     for (var i = 0; i < rainKeyword.length; i++) {
-      movieVideoURL = "https://itunes.apple.com/search?term=" + rainKeyword[i] + "&media=musicVideo&limit=50"
+      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + rainKeyword[i] + "&media=musicVideo&limit=50"
       var response = await $.ajax({
         url: movieVideoURL,
         method: "GET"
@@ -193,7 +193,7 @@ movieBtn.on("click", async function () {
   if (userWeather.includes("Mist")) {
     mistKeyword = ["thriller", "documentary", "horror", "romance"];
     for (var i = 0; i < mistKeyword.length; i++) {
-      movieVideoURL = "https://itunes.apple.com/search?term=" + mistKeyword[i] + "&media=musicVideo&limit=50"
+      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + mistKeyword[i] + "&media=musicVideo&limit=50"
       var response = await $.ajax({
         url: movieVideoURL,
         method: "GET"
