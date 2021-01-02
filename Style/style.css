@@ -1,86 +1,67 @@
+*{ box-sizing: border-box; }
 body{
   margin: 0; 
   padding: 0; 
   background: linear-gradient(#000a12,#263238);
   color: whitesmoke;
-  font-family: 'Big Shoulders Stencil Text', cursive;
-  /* height: 200vh; */
+  height: 200vh;
   font-family: 'Bree Serif', serif;
 }
-
 h5{
   font-family: 'Bree Serif', serif;
 }
-
-
-#navBar{
-  text-align: center;
-
+#topContainer{
+  height: 150px;
+  margin: 5px;
+  margin-top: 25px;
 }
-
-.link{
-  font-size: large;
+#topContainerRow{
+  height: 150px;
   margin: 5px;
 }
-
-#weatherSection{
-    margin-left: 20px;
-} 
-
-#videoSection{
-    height: 300px;
-    /* border: solid; */
-    margin-top: 15px;
-    margin-bottom: 25px;
-} 
-
-#videoInfoSection{
-    height: 600px;
-    /* border: solid; */
-} 
-
-#weatherBox{
-    width:180px;
-    height:180px;
-    background-color: white;
-    margin-top:15px;
-    height: 300px;
-  }
-  #musicBtn{
-    /* background-color: white;
-    padding: 20px;
-    padding-right:40px;
-    margin-top:20px;
-    border-radius: 4px; */
-  }
-  #movieBtn{
-    /* background-color: white;
-    padding: 20px;
-    padding-right:40px;
-    margin-top:20px;
-    border-radius: 4px; */
-  }
-  #zipCode{
-    margin-bottom:15px;
-  }
-
-
-
-#myColumn{
+#navBar{
+  text-align: center;
+}
+h1{
+  font-family: 'Permanent Marker', cursive;
+}
+#bottomContainer{
+  height: 600px;
+  margin: 5px;
+}
+#bottomContainerRow{
+  height: 550px;
+  margin: 5px;
+}
+#firstColumn,
+#secondColumn,
+#thirdColumn{
   float:left;
   width: 30%;
   margin: 10px;
+  border:solid;
 }
-
+#pTagOne{
+  padding: 1rem;
+  font-family: 'Bree Serif', serif; 
+  text-align: center;
+}
+#numberOptions{
+  text-align: center;
+}
+#numRecords{
+  display: block;
+}
 @media screen and (max-width: 1066px){
-   #myColumn {
+  body{
+    height: 250vh;
+  }
+  #firstColumn,
+  #secondColumn,
+  #thirdColumn{
         width: 100%;        
     }
-
     .middleColumn {
       height: 100%;
     }
-
 }
-
-

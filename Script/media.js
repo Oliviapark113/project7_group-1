@@ -6,11 +6,11 @@ var movieMasterList = [];
 //DOM element 
 var musicBtn = $("#musicBtn")
 var movieBtn = $("#movieBtn")
-var container = $(".mv-container")
+var container = $(".image-container")
 var artistImage = $(".image-artist")
-var media = $(".media")
+var media = $("#media")
 var img;
-
+var mediaSection = $(".mediaSection")
 // randomly pulled data based on selected Number 
 function runRandom(num, type) {
   //number value string convert into " number"
@@ -46,28 +46,21 @@ e.stopPropagation()
 }
 function openMedia(url, title) {
   console.log(url)
-  media.html(`<video controls autoplay width=700px src="${url}" ></video><p>${title}</p>`)
-  // media.append("<button class='closeBtn'>CLOSE</button>")
+  removeLastColumn()
+  media.html(`<video controls autoplay width=100% src="${url}" ></video><p>${title}</p>`)
+  media.append("<button class='closeBtn'>CLOSE</button>")
   media.removeClass("hide")
 }
 function closeMedia() {
   media.html("")
   toggleOverlay();
-  // toggleWeatherBox();
+  lastColumn()
 }
 function toggleOverlay() {
   $(".artist-image").toggleClass("blur")
 }
-media.on("click", closeMedia)
-function toggleWeatherBox(){
-  $(".city-search").toggleClass("hide")
-  $(".zip-search").toggleClass("hide")
-  $(".weather-result").toggleClass("hide")
 
-}
-function toggleSelect(){
-  $(".select").toggleClass("selectMove")
-}
+media.on("click", closeMedia)
 var clearKeyword;    //("Clear")
 var cloudsKeyword;  //("Clouds")
 var snowKeyword;   //("Snow")
@@ -75,9 +68,7 @@ var rainKeyword;  //("Rain")
 var windKeyword;  //("Windy")
 var mistKeyword; //("Mist")
 musicBtn.on("click", async function () {
-  // toggleWeatherBox();
   removeMiddleColumn()
-  toggleSelect();
   numResults = $("#numRecords").val()
   var userWeather = $("#main_weather").text()
   if (userWeather.includes("Clear")) {
@@ -114,7 +105,6 @@ musicBtn.on("click", async function () {
         url: musicVideoURL,
         method: "GET"
       })
-      // console.log(JSON.parse(response))
       var responseJson = JSON.parse(response)
       musicMasterList.push(responseJson.results)
     }
@@ -127,7 +117,6 @@ musicBtn.on("click", async function () {
         url: musicVideoURL,
         method: "GET"
       })
-      // console.log(JSON.parse(response))
       var responseJson = JSON.parse(response)
       musicMasterList.push(responseJson.results)
     }
@@ -140,7 +129,6 @@ musicBtn.on("click", async function () {
         url: musicVideoURL,
         method: "GET"
       })
-      // console.log(JSON.parse(response))
       var responseJson = JSON.parse(response)
       musicMasterList.push(responseJson.results)
     }
@@ -218,7 +206,6 @@ movieBtn.on("click", async function () {
   }
   runRandom(numResults, "movie");
 })
-
 function formatName (string){
   var shortStr = string.slice(0,20) + "..."
   if (string.length > 20){
@@ -230,21 +217,25 @@ function formatName (string){
     return string
   }
 }
-
-// formatName("adsafjakldfkafkaadfaadflkfafkfjalkdjfalkjdfadjlkj")
-// formatName("Mike")
-
+//function to add class to middle column allowing it to be 100% height when there is no content in it
 function middleColumn (){
   if (artistImage.html() === ""){
-    container.addClass("middleColumn")
+    container.addClass("middleColumn");
   }
 }
-
-function removeMiddleColumn (){ 
-    container.removeClass("middleColumn")
-  
+//function to add class to last column allowing it to be 100% height when there is no content in it
+function lastColumn (){
+  if (media.html() === ""){
+    mediaSection.addClass("middleColumn");
+  }
 }
-
-console.log(artistImage.html() === "")
-
+//function to remove class from middle column allowing it to be responsive to the content that is appended inside it
+function removeMiddleColumn (){ 
+  container.removeClass("middleColumn")
+}
+//function to remove class from last column allowing it to be responsive to the content that is appended inside it
+function removeLastColumn (){ 
+  mediaSection.removeClass("middleColumn")
+}
 middleColumn()
+lastColumn()
