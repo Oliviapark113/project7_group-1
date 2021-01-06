@@ -59,13 +59,17 @@ function closeMedia() {
 function toggleOverlay() {
   $(".artist-image").toggleClass("blur")
 }
+
 media.on("click", closeMedia)
+
 var clearKeyword;    //("Clear")
 var cloudsKeyword;  //("Clouds")
 var snowKeyword;   //("Snow")
 var rainKeyword;  //("Rain")
 var windKeyword;  //("Windy")
 var mistKeyword; //("Mist")
+var defaultKeyword;//("None of the above")
+
 musicBtn.on("click", async function () {
   removeMiddleColumn()
   numResults = $("#numRecords").val()
@@ -96,7 +100,7 @@ musicBtn.on("click", async function () {
       musicMasterList.push(responseJson.results)
     }
   }
-  if (userWeather.includes("Snow")) {
+  else if (userWeather.includes("Snow")) {
     snowKeyword = ["christmaspop", "classical", "christmasjazz", "blues"];
     for (var i = 0; i < snowKeyword.length; i++) {
       musicVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + snowKeyword[i] + "&media=musicVideo&limit=50"
@@ -108,7 +112,7 @@ musicBtn.on("click", async function () {
       musicMasterList.push(responseJson.results)
     }
   }
-  if (userWeather.includes("Rain")) {
+  else if (userWeather.includes("Rain")) {
     rainKeyword = ["jazz", "R&B", "soul", "blues"];
     for (var i = 0; i < rainKeyword.length; i++) {
       musicVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + rainKeyword[i] + "&media=musicVideo&limit=50"
@@ -120,7 +124,7 @@ musicBtn.on("click", async function () {
       musicMasterList.push(responseJson.results)
     }
   }
-  if (userWeather.includes("Mist")) {
+  else if (userWeather.includes("Mist")) {
     mistKeyword = ["jazz", "R&B", "soul", "lo-fi"];
     for (var i = 0; i < mistKeyword.length; i++) {
       musicVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + mistKeyword[i] + "&media=musicVideo&limit=50"
@@ -132,8 +136,22 @@ musicBtn.on("click", async function () {
       musicMasterList.push(responseJson.results)
     }
   }
+  else{
+    defaultKeyword = ["jazz", "R&B", "soul", "lo-fi","metal"];
+    for (var i = 0; i < defaultKeyword.length; i++) {
+      musicVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + defaultKeyword[i] + "&media=musicVideo&limit=50"
+      var response = await $.ajax({
+        url: musicVideoURL,
+        method: "GET"
+      })
+      var responseJson = JSON.parse(response)
+      musicMasterList.push(responseJson.results)
+
+  }
+}
   runRandom(numResults,"music");
 })
+
 movieBtn.on("click", async function () {
   numResults = $("#numRecords").val()
   removeMiddleColumn()
@@ -164,7 +182,7 @@ movieBtn.on("click", async function () {
       movieMasterList.push(responseJson.results)
     }
   }
-  if (userWeather.includes("Snow")) {
+  else if (userWeather.includes("Snow")) {
     snowKeyword = ["romance", "comedy", "action", "kids","holiday"];
     for (var i = 0; i < snowKeyword.length; i++) {
       movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + snowKeyword[i] + "&media=movie&limit=50"
@@ -177,10 +195,10 @@ movieBtn.on("click", async function () {
       movieMasterList.push(responseJson.results)
     }
   }
-  if (userWeather.includes("Rain")) {
+  else if (userWeather.includes("Rain")) {
     rainKeyword = ["thriller", "documentary", "horror", "independent"];
     for (var i = 0; i < rainKeyword.length; i++) {
-      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + rainKeyword[i] + "&media=musicVideo&limit=50"
+      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + rainKeyword[i] + "&media=movie&limit=50"
       var response = await $.ajax({
         url: movieVideoURL,
         method: "GET"
@@ -190,10 +208,10 @@ movieBtn.on("click", async function () {
       movieMasterList.push(responseJson.results)
     }
   }
-  if (userWeather.includes("Mist")) {
+  else if (userWeather.includes("Mist")) {
     mistKeyword = ["thriller", "documentary", "horror", "romance"];
     for (var i = 0; i < mistKeyword.length; i++) {
-      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + mistKeyword[i] + "&media=musicVideo&limit=50"
+      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + mistKeyword[i] + "&media=movie&limit=50"
       var response = await $.ajax({
         url: movieVideoURL,
         method: "GET"
@@ -202,9 +220,26 @@ movieBtn.on("click", async function () {
       var responseJson = JSON.parse(response)
       movieMasterList.push(responseJson.results)
     }
+  }
+  else{
+
+    defaultKeyword = ["romance", "comedy", "animation", "action","classic"];
+    for (var i = 0; i < defaultKeyword.length; i++) {
+      movieVideoURL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + defaultKeyword[i] + "&media=movie&limit=50"
+      var response = await $.ajax({
+        url: movieVideoURL,
+        method: "GET"
+      })
+      var responseJson = JSON.parse(response)
+      movieMasterList.push(responseJson.results)
+
+  }
+
   }
   runRandom(numResults, "movie");
 })
+
+
 function formatName (string){
   var shortStr = string.slice(0,20) + "..."
   if (string.length > 20){
