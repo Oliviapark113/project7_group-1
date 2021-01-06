@@ -3,7 +3,6 @@ var appID = "80b3e8a297999f6bc99d97f895ecd144"
 var query_param;
 var currentDay = document.querySelector("#current-date");
 var now = moment().format('LLL');
-
 function displayCurrentDay() {
   currentDay.textContent = now;
 }
@@ -16,7 +15,6 @@ $(".search_btn").on("click", function () {
     weather = "https://api.openweathermap.org/data/2.5/weather?q=" + query_param + "&units=imperial" + "&appid=" + appID;
     getWeatherData()
   }
-
 });
 function getWeatherData() {
   $.getJSON(weather, function (json) {
@@ -29,7 +27,6 @@ function getWeatherData() {
     $("#temperature").text(json.main.temp+" °F");
   })
 }
-
 //fun animation effect for logos 
 var h1Complete = function () {
   $(this).animate({ fontSize: "55px", opacity: "1" }, 3000)
@@ -40,6 +37,3 @@ var pComplete = function () {
 $("h1").on("click", function () {
   $(this).animate({ fontSize: "100px", opacity: "0.3" }, "slow", h1Complete)
 });
-
-
-

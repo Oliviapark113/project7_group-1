@@ -5,29 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>RagingMongooses</title>
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
-
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-    crossorigin="anonymous"></script>
-
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/09ac4049bb.js" crossorigin="anonymous"></script>
-
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="Style/olivia.css">
-
   <link rel="stylesheet" href="Style/style.css">
-
 </head>
 
 <body>
-
   <!-- Top container -->
   <div id="topContainer" class="grid-container fluid">
     <div id="topContainerRow" class="grid-x grid-margin-x align-center">
@@ -42,8 +31,7 @@
     <div id="bottomContainerRow" class="grid-x grid-margin-x medium-margin-collapse align-center">
       <!-- Weather Finder -->
       <div id="firstColumn" class="cell small-4 weather-container">
-        <p id="pTagOne">Enter a city name to find current weather and get song or movie suggestions based off weather
-        </p>
+        <p id="pTagOne">Enter a city name to find current weather and get song or movie suggestions based off weather</p>
         <div class="city-search">
           <input class="search_input" type="text" placeholder="City">
           <button type="button" class="search_btn">Search for a City</button>
@@ -59,13 +47,13 @@
         <div class="select hide">
           <div id="numberOptions">Please select a number of results</div>
           <select id="numRecords" class="form-control">
-            <option value=3>3</option>
-            <option value=6 selected>6</option>
-            <option value=9>9</option>
+              <option value=3>3</option>
+              <option value=6 selected>6</option>
+              <option value=9>9</option>
           </select>
           <div class="button-container">
-            <button id="musicBtn">GO TO MUSIC</button>
-            <button id="movieBtn">GO TO MOVIE</button>
+              <button id="musicBtn">GO TO MUSIC</button>
+              <button id="movieBtn">GO TO MOVIE</button>
           </div>
         </div>
       </div>
@@ -75,7 +63,7 @@
       </div>
       <!-- Video preview -->
       <div id="thirdColumn" class="cell small-4 mediaSection">
-        <div id="videoSection">
+        <div id="videoSection" >
           <div id="video-container"></div>
           <div id="media"></div>
         </div>
@@ -83,18 +71,9 @@
       </div>
     </div>
   </div>
-
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-    crossorigin="anonymous"></script>
-
+  integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="crossorigin="anonymous"></script>
   <script src="Script/utility.js"></script>
   <script src="Script/media.js"></script>
-
-
-
 </body>
-
 </html>

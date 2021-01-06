@@ -262,7 +262,7 @@ function lastColumn (){
   if (media.html() === ""){
     mediaSection.addClass("middleColumn");
   }
-}
+} 
 //function to remove class from middle column allowing it to be responsive to the content that is appended inside it
 function removeMiddleColumn (){ 
   container.removeClass("middleColumn")
